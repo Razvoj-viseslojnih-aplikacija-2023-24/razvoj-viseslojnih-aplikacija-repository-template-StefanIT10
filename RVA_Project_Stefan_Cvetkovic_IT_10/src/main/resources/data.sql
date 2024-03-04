@@ -46,4 +46,4 @@ values(nextval('rociste_seq'), to_date('09.09.2023.' , 'dd.mm.yyyy.'), 'Sudnica 
 insert into rociste(id, datum_rocista, sudnica, ucesnik, predmet)
 values(nextval('rociste_seq'), to_date('11.11.2021.' , 'dd.mm.yyyy.'), 'Sudnica u Novom Sadu', 4, 4);
 
-
+#promena
