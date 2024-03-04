@@ -34,7 +34,7 @@ public class Predmet implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name = "sud")
-	private Ucesnik sud;
+	private Sud sud;
 	
 	public Predmet() {
 	
