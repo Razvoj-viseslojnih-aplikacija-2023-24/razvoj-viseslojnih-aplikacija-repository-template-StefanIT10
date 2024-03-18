@@ -27,6 +27,12 @@ public class RocisteServiceImpl implements RocisteService {
 	public boolean existById(int id) {
 		return repo.existsById(id);
 	}
+	
+	@Override
+	public Optional<Rociste> findById(int id)
+	{
+		return repo.findById(id);
+	}
 
 	@Override
 	public Rociste create(Rociste t) {

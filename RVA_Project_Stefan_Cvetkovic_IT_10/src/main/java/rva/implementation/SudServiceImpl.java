@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import rva.models.Predmet;
 import rva.models.Sud;
 import rva.repository.SudRepository;
 import rva.services.SudService;
@@ -24,6 +25,12 @@ public class SudServiceImpl implements SudService {
 	@Override
 	public boolean existById(int id) {
 		return repo.existsById(id);
+	}
+	
+	@Override
+	public Optional<Sud> findById(int id)
+	{
+		return repo.findById(id);
 	}
 
 	@Override

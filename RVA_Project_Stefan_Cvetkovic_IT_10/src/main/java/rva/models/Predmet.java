@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,9 +32,34 @@ public class Predmet implements Serializable{
 	private Date datumPocetka;
 	private boolean aktivan;
 	
-	@OneToMany(mappedBy = "predmet")
+	@OneToMany(mappedBy = "predmet", cascade = CascadeType.REMOVE)
+	@JsonIgnore
 	private List<Rociste> rocista;
 	
+	public Date getDatumPocetka() {
+		return datumPocetka;
+	}
+
+	public void setDatumPocetka(Date datumPocetka) {
+		this.datumPocetka = datumPocetka;
+	}
+
+	public List<Rociste> getRocista() {
+		return rocista;
+	}
+
+	public void setRocista(List<Rociste> rocista) {
+		this.rocista = rocista;
+	}
+
+	public Sud getSud() {
+		return sud;
+	}
+
+	public void setSud(Sud sud) {
+		this.sud = sud;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "sud")
 	private Sud sud;

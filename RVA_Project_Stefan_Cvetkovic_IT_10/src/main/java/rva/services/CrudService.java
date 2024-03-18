@@ -15,5 +15,6 @@ public interface CrudService<T> {
 	
 	void delete(int id);
 	
+	Optional<T> findById(int id);
 
 }

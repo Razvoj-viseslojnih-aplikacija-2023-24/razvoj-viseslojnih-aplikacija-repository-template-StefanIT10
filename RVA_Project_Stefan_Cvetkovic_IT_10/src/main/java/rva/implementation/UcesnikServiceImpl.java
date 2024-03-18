@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import rva.models.Predmet;
 import rva.models.Ucesnik;
 import rva.repository.UcesnikRepository;
 import rva.services.UcesnikService;
@@ -24,6 +25,12 @@ public class UcesnikServiceImpl implements UcesnikService {
 	@Override
 	public boolean existById(int id) {
 		return repo.existsById(id);
+	}
+	
+	@Override
+	public Optional<Ucesnik> findById(int id)
+	{
+		return repo.findById(id);
 	}
 
 	@Override

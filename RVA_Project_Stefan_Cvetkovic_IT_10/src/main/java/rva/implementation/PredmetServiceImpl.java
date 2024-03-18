@@ -26,6 +26,12 @@ public class PredmetServiceImpl implements PredmetService {
 	public boolean existById(int id) {
 		return repo.existsById(id);
 	}
+	
+	@Override
+	public Optional<Predmet> findById(int id)
+	{
+		return repo.findById(id);
+	}
 
 	@Override
 	public Predmet create(Predmet t) {
