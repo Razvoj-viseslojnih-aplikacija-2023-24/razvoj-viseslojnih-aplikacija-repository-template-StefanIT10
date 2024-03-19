@@ -53,7 +53,7 @@ public class SudController {
 	}
 	
 	@PostMapping("/sud")
-	public ResponseEntity createSudovi(@RequestBody Sud sud) {
+	public ResponseEntity createSud(@RequestBody Sud sud) {
 		if(service.existById(sud.getId())) {
 			return ResponseEntity.status(409).body("Resource already exists!");
 		}
@@ -63,7 +63,7 @@ public class SudController {
 	}
 	
 	@PutMapping("/sud/id/{id}")
-	public ResponseEntity<?> updateArtikl(@RequestBody Sud sud, @PathVariable int id){
+	public ResponseEntity<?> updateSud(@RequestBody Sud sud, @PathVariable int id){
 			Optional<Sud> updatedSud = service.update(sud, id);
 			if(updatedSud.isPresent()) {
 				return ResponseEntity.ok(updatedSud.get());
