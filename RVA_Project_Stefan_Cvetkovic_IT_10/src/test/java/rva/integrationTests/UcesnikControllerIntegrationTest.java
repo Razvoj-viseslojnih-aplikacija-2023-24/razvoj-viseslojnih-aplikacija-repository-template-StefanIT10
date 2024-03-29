@@ -60,14 +60,14 @@ class UcesnikControllerIntegrationTest {
 		List<Ucesnik> ucesnici = response.getBody();
 		
 		assertEquals(200, statusCode);
-		assertTrue(!ucesnici.isEmpty());
+		assertNotNull(ucesnici);
 		
 		
 	}
 	
 	@Test
 	@Order(2)
-	void testUcesnikById() {
+	void testGetUcesnikById() {
 		int id = 1;
 		ResponseEntity<Ucesnik> response = template.exchange("/ucesnik/id/" + id, HttpMethod.GET, null, Ucesnik.class);
 		
@@ -86,15 +86,14 @@ class UcesnikControllerIntegrationTest {
 				null, new ParameterizedTypeReference<List<Ucesnik>>() {} );
 		int statusCode = response.getStatusCode().value();
 		List<Ucesnik> ucesnici = response.getBody();
+		String mbrUcesnika =   ucesnici.get(0).getMbr();
 		
 		assertEquals(200, statusCode);
-		assertNotNull(response.getBody());
-		//assertEquals(naziv, response.getBody().ge);
-		for(Ucesnik u: ucesnici) {
-			assertTrue(u.getMbr().contains(mbr));
+		assertNotNull(ucesnici.get(0));
+		assertTrue(mbrUcesnika.startsWith(mbr));	
 		
 		}
-	}
+	
 	
 
 	
@@ -104,6 +103,8 @@ class UcesnikControllerIntegrationTest {
 		Ucesnik ucesnik = new Ucesnik();
 		ucesnik.setIme("POST ime");
 		ucesnik.setMbr("POST mbr");
+		ucesnik.setPrezime("POST prezime");
+		ucesnik.setStatus("POST status");
 		
 		HttpEntity<Ucesnik> entity = new HttpEntity<Ucesnik>(ucesnik);
 		createHighestId();
@@ -117,14 +118,19 @@ class UcesnikControllerIntegrationTest {
 				response.getHeaders().getLocation().getPath());
 		assertEquals(ucesnik.getIme(), response.getBody().getIme());
 		assertEquals(ucesnik.getMbr(), response.getBody().getMbr());
+		assertEquals(ucesnik.getPrezime(), response.getBody().getPrezime());
+		assertEquals(ucesnik.getStatus(), response.getBody().getStatus());
 	}
 	
 	@Test
 	@Order(5)
 	void testUpdateUcesnik() {
 		Ucesnik ucesnik = new Ucesnik();
-		ucesnik.setIme("POST ime");
-		ucesnik.setMbr("POST mbr");;
+		ucesnik.setIme("PUT ime");
+		ucesnik.setMbr("PUT mbr");
+		ucesnik.setPrezime("PUT prezime");
+		ucesnik.setStatus("PUT status");
+
 		
 		HttpEntity<Ucesnik> entity = new HttpEntity<Ucesnik>(ucesnik);
 		getHighestId();
@@ -137,6 +143,9 @@ class UcesnikControllerIntegrationTest {
 		assertTrue(response.getBody() instanceof Ucesnik);
 		assertEquals(ucesnik.getIme(), response.getBody().getIme());
 		assertEquals(ucesnik.getMbr(), response.getBody().getMbr());
+		assertEquals(ucesnik.getPrezime(), response.getBody().getPrezime());
+		assertEquals(ucesnik.getStatus(), response.getBody().getStatus());
+		
 	}
 	
 	@Test

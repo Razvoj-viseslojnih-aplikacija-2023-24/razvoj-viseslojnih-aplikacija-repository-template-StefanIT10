@@ -100,13 +100,6 @@ public class Predmet implements Serializable{
 		this.opis = opis;
 	}
 
-	public Date getDatum_pocetka() {
-		return datumPocetka;
-	}
-
-	public void setDatum_pocetka(Date datum_pocetka) {
-		this.datumPocetka = datum_pocetka;
-	}
 
 	public boolean isAktivan() {
 		return aktivan;

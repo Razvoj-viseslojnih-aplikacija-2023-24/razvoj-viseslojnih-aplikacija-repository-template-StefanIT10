@@ -66,7 +66,7 @@ class SudControllerIntegrationTest {
 	
 	@Test
 	@Order(2)
-	void testSudById() {
+	void testGetSudById() {
 		int id = 1;
 		ResponseEntity<Sud> response = template.exchange("/sud/id/" + id, HttpMethod.GET, null, Sud.class);
 		
@@ -132,6 +132,7 @@ class SudControllerIntegrationTest {
 						entity, Sud.class);
 		int statusCode = response.getStatusCode().value();
 		
+		assertTrue(response.hasBody());
 		assertEquals(200, statusCode);
 		assertTrue(response.getBody() instanceof Sud);
 		assertEquals(sud.getNaziv(), response.getBody().getNaziv());

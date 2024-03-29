@@ -66,6 +66,30 @@ public class Rociste implements Serializable{
 	public void setSudnica(String sudnica) {
 		this.sudnica = sudnica;
 	}
+
+
+
+	public Ucesnik getUcesnik() {
+		return ucesnik;
+	}
+
+
+
+	public void setUcesnik(Ucesnik ucesnik) {
+		this.ucesnik = ucesnik;
+	}
+
+
+
+	public Predmet getPredmet() {
+		return predmet;
+	}
+
+
+
+	public void setPredmet(Predmet predmet) {
+		this.predmet = predmet;
+	}
 	
 	
 	
