@@ -1,0 +1,1 @@
+export const SUD_URL = "http://localhost:8080/sud";
