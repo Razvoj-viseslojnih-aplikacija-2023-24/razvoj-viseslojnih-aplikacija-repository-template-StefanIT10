@@ -28,6 +28,13 @@ import { MatDialogModule} from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PredmetDijalogComponent } from './components/dialogs/predmet-dijalog/predmet-dijalog.component';
+import { UcesnikDijalogComponent } from './components/dialogs/ucesnik-dijalog/ucesnik-dijalog.component';
+import { RocisteDijalogComponent } from './components/dialogs/rociste-dijalog/rociste-dijalog.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,10 @@ import {FormsModule} from '@angular/forms';
     HomeComponent,
     AboutComponent,
     AuthorComponent,
-    SudDijalogComponent
+    SudDijalogComponent,
+    PredmetDijalogComponent,
+    UcesnikDijalogComponent,
+    RocisteDijalogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,11 @@ import {FormsModule} from '@angular/forms';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
