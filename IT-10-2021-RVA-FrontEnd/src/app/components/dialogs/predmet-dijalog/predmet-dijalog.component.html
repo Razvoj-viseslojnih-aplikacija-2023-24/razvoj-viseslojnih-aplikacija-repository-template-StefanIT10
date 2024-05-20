@@ -1,7 +1,7 @@
 <div class="container">
-    <h3 mat-dialog-title *ngIf="flag == 1">Dodavanje predmeta</h3>
-    <h3 mat-dialog-title *ngIf="flag == 2">Ažuriranje predmeta: {{data.brojPr}}</h3>
-    <h3 mat-dialog-title *ngIf="flag == 3">Brisanje predmeta: {{data.brojPr}}</h3>
+    <h3 mat-dialog-title *ngIf="flag == 1">Dodavanje porduzbine</h3>
+    <h3 mat-dialog-title *ngIf="flag == 2">Ažuriranje porduzbine: {{data.id}}</h3>
+    <h3 mat-dialog-title *ngIf="flag == 3">Brisanje porduzbine: {{data.id}}</h3>
 
     <form class="mat-dialog-content" #formControl="ngForm">
         <div class="form">
@@ -10,31 +10,32 @@
                 <mat-datepicker-toggle matSuffix [for]="datumPocetka"></mat-datepicker-toggle>
                 <mat-datepicker #datumPocetka></mat-datepicker>
             </mat-form-field>
-        </div>
-        <div class="form">
-            <mat-form-field>
-                <input matInput placeholder="Broj predmeta" name="brojPredmeta" [disabled]="flag==3" [(ngModel)]="data.brojPr" required />
-            </mat-form-field>
-        </div>
+           </div>
+       <div class="form">
+        <mat-form-field>
+            <input matInput placeholder="Broj Predmeta" name="brojPredmeta" [disabled]="flag==3" [(ngModel)]="data.brojPr" required />
+        </mat-form-field>
+       </div>
 
-        <div class="form">
-            <mat-form-field>
-                <input matInput placeholder="Opis" name="opis" [disabled]="flag==3" [(ngModel)]="data.opis" required />
-            </mat-form-field>
-        </div>
-        <div class="form">
-            <mat-form-field>
-                <input matInput placeholder="Aktivan" name="aktivan" [disabled]="flag==3" [(ngModel)]="data.aktivan" required />
-            </mat-form-field>
-        </div>
-        <div class="form">
-            <mat-select [compareWith]="compare" placeholder="Sud" name="Sud" [disabled]="flag==3" [(ngModel)]="data.sud" required>
-                <mat-option *ngFor="let sud of sudovi" [value]="sud">
-                    {{sud.naziv}}
-                </mat-option>
-            </mat-select>
-        </div>
-
+       <div class="form">
+        <mat-form-field>
+            <input matInput placeholder="Opis" name="opis" [disabled]="flag==3" [(ngModel)]="data.opis" required />
+        </mat-form-field>
+       </div>
+       <div class="form">
+        <mat-form-field>
+            <input matInput placeholder="Aktivan" name="aktivan" [disabled]="flag==3" [(ngModel)]="data.aktivan" required />
+        </mat-form-field>
+       </div>
+       <div class="form">
+        <mat-select [compareWith]="compare" placeholder="Sud" name="Sud"
+         [disabled]="flag==3" [(ngModel)]="data.sud" required>
+            <mat-option *ngFor="let sud of sudovi" [value]="sud">
+                {{sud.naziv}}
+            </mat-option>
+        </mat-select>
+       </div>
+      
     </form>
 
     <div class="mat-dialog-actions">
@@ -44,3 +45,5 @@
         <button matButton (click)="cancel()">Poništi</button>
     </div>
 </div>
+
+

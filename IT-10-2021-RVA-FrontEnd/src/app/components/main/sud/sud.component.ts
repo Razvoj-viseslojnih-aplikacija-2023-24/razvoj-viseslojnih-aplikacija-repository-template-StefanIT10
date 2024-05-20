@@ -1,5 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { SudDijalogComponent } from 'src/app/component/dialogs/sud-dijalog/sud-dijalog.component';
@@ -17,6 +19,9 @@ export class SudComponent implements OnInit, OnDestroy {
   dataSource!:MatTableDataSource<Sud>;
   subscription!:Subscription;
 
+  @ViewChild(MatSort, {static:false}) sort!:MatSort;
+  @ViewChild(MatPaginator, {static:false}) paginator!:MatPaginator;
+
   constructor(private service:SudService, public dialog:MatDialog){}
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
@@ -31,6 +36,8 @@ export class SudComponent implements OnInit, OnDestroy {
       (data) => {
         //console.log(data)
         this.dataSource = new MatTableDataSource(data);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }    
     ),
     (error:Error) => {
@@ -51,4 +58,13 @@ export class SudComponent implements OnInit, OnDestroy {
       }
     )
   }
+
+  public applyFilter(filter:any){
+    filter = filter.target.value;
+    filter = filter.trim();
+    filter = filter.toLocaleLowerCase();
+    this.dataSource.filter = filter;
+  }
+
 }
+

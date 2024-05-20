@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Predmet } from 'src/app/models/predmet';
@@ -16,7 +16,7 @@ import { UcesnikService } from 'src/app/services/ucesnik.service';
 export class RocisteDijalogComponent implements OnInit{
   flag!:number;
   ucesnici!: Ucesnik[];
-  predmeti!: Predmet[];
+
 
   constructor (
     public snackBar: MatSnackBar,
@@ -24,8 +24,8 @@ export class RocisteDijalogComponent implements OnInit{
     @Inject (MAT_DIALOG_DATA) public data:Rociste,
     public service: RocisteService,
     public ucesnikService: UcesnikService,
-    public predmetService: PredmetService
   ){}
+
 
   ngOnInit(): void {
     this.ucesnikService.getAllUcesnik().subscribe(
@@ -33,11 +33,7 @@ export class RocisteDijalogComponent implements OnInit{
         this.ucesnici = data;
       }
     )
-    this.predmetService.getAllPredmet().subscribe(
-      (data)=>{
-        this.predmeti = data;
-      }
-    )
+    
   }
 
   public compare(a:Rociste, b:Rociste){

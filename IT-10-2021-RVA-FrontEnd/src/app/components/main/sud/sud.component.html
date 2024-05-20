@@ -3,10 +3,16 @@
   </mat-toolbar>
   
   <div class="container mat-elavation-z8">
-    <mat-table [dataSource]="dataSource" class="mat-cell">
+    
+      <div class="filter-field">
+        <mat-form-field subscriptSizing="dynamic">
+          <input matInput placeholder="Pretraga .." name="filter" (keyup)="applyFilter($event)" />
+        </mat-form-field>
+      </div>
+      <mat-table matSort [dataSource]="dataSource" class="mat-cell" >
       <!--ID-->
       <ng-container matColumnDef="naziv">
-        <mat-header-cell *matHeaderCellDef>NAZIV</mat-header-cell>
+        <mat-header-cell mat-sort-header *matHeaderCellDef>NAZIV</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.naziv }}</mat-cell>
       </ng-container>
       <!--Naziv-->
@@ -41,5 +47,8 @@
         *matRowDef="let row; columns: displayedColumns">
       </mat-row>
     </mat-table>
+    <mat-paginator [length]="20" [pageSize]="6" [pageSizeOptions]="[3,6,9,12]">
+
+    </mat-paginator>
   </div>
     

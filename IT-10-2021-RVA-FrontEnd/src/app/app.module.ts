@@ -35,6 +35,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PredmetDijalogComponent } from './components/dialogs/predmet-dijalog/predmet-dijalog.component';
 import { UcesnikDijalogComponent } from './components/dialogs/ucesnik-dijalog/ucesnik-dijalog.component';
 import { RocisteDijalogComponent } from './components/dialogs/rociste-dijalog/rociste-dijalog.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { RocisteDijalogComponent } from './components/dialogs/rociste-dijalog/ro
     PredmetDijalogComponent,
     UcesnikDijalogComponent,
     RocisteDijalogComponent
+
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,9 @@ import { RocisteDijalogComponent } from './components/dialogs/rociste-dijalog/ro
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

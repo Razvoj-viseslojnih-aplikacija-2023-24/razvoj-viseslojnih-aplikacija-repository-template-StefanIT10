@@ -19,6 +19,8 @@ export class PredmetComponent implements OnInit, OnDestroy {
   dataSource!:MatTableDataSource<Predmet>;
   subscription!:Subscription;
 
+  parentSelectedPredmet!:Predmet;
+
   constructor(private service:PredmetService, public dialog:MatDialog){}
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
@@ -53,6 +55,12 @@ export class PredmetComponent implements OnInit, OnDestroy {
       }
     )
   }
+
+  public selectRow(row:Predmet){
+    this.parentSelectedPredmet = row;
+  }  
+
 }
+
 
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -13,23 +13,31 @@ import { RocisteDijalogComponent } from '../../dialogs/rociste-dijalog/rociste-d
   templateUrl: './rociste.component.html',
   styleUrls: ['./rociste.component.css']
 })
-export class RocisteComponent implements OnInit, OnDestroy{
+export class RocisteComponent implements OnInit, OnDestroy, OnChanges{
       
-  displayedColumns = ['id', 'datumRocista', 'sudnica', 'ucesnik', 'predmet', 'actions'];
+  displayedColumns = ['id', 'datumRocista', 'sudnica', 'ucesnik', 'actions'];
   dataSource!:MatTableDataSource<Rociste>;
   subscription!:Subscription;
+
+  @Input()
+  childSelectedPredmet!:Predmet;
 
   constructor(private service:RocisteService, public dialog:MatDialog){}
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.loadData();
+  }
+
+
   ngOnInit(): void {
     this.loadData();
   }
 
   public loadData(){
-    this.subscription = this.service.getAllRociste().subscribe(
+    this.subscription = this.service.getRocisteByPredmet(this.childSelectedPredmet.id).subscribe(
       (data) => {
         //console.log(data)
         this.dataSource = new MatTableDataSource(data);
@@ -42,8 +50,8 @@ export class RocisteComponent implements OnInit, OnDestroy{
     
   }
 
-  public openDialog(flag:number, id?:number, datumRocista?:Date, sudnica?:string, ucesnik?:Ucesnik, predmet?:Predmet){
-    const dialogRef = this.dialog.open(RocisteDijalogComponent, {data: {id, datumRocista, sudnica, ucesnik, predmet}});
+  public openDialog(flag:number, id?:number, datumRocista?:Date, sudnica?:string, ucesnik?:Ucesnik){
+    const dialogRef = this.dialog.open(RocisteDijalogComponent, {data: {id, datumRocista, sudnica, ucesnik}});
     dialogRef.componentInstance.flag = flag
     dialogRef.afterClosed().subscribe(
       (result) => {

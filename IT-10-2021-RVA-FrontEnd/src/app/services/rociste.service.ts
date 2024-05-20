@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ROCISTE_URL } from '../constants';
+import { ROCISTE_BY_PREDMET_URL, ROCISTE_URL } from '../constants';
 import { Rociste } from '../models/rociste';
 
 @Injectable({
@@ -14,6 +14,10 @@ export class RocisteService {
 
   public getAllRociste():Observable<any>{
     return this.httpClient.get(`${ROCISTE_URL}`)
+  }
+
+  public getRocisteByPredmet(predmetId:number):Observable<any>{
+    return this.httpClient.get(`${ROCISTE_BY_PREDMET_URL}/${predmetId}`);
   }
   
   public createRociste(rociste:Rociste):Observable<any>{
