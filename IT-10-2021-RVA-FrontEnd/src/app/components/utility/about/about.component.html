@@ -1,1 +1,166 @@
-<p>about works!</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Lato", sans-serif
+        }
+        
+        .mySlides {
+            display: none
+        }
+        
+        .w3-tag,
+        .fa {
+            cursor: pointer
+        }
+        
+        .w3-tag {
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            margin-top: 6px
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+            <div class="w3-col s3">
+                <a href="/home" class="w3-button w3-block">Pocetna</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/author" class="w3-button w3-block">Autor</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/about" class="w3-button w3-block">O nama</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+        <div class="w3-panel">
+            <h1><b>O nama</b></h1>
+            <p>Tim koji je razvio aplikaciju za vodjenje evidencije suda sastoji se od iskusnih strucnjaka iz oblasti prava i tehnologije. Sa dugogodisnjim iskustvom u razvoju softverskih resenja za pravosudne institucije, clanovi tima su kombinovali svoje
+                znanje i vestine kako bi kreirali intuitivnu i efikasnu aplikaciju. Njihov cilj je bio da olaksaju rad sudija, advokata i administrativnog osoblja, pruzajuci im mocan alat koji pojednostavljuje procese i poboljsava pravnu efikasnost. Kroz
+                blisku saradnju sa korisnicima, tim je osigurao da aplikacija ispunjava stvarne potrebe i olaksava svakodnevne zadatke u pravosudnim institucijama.</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="w3-row-padding" id="about">
+            <div class="w3-center w3-padding-64">
+                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Ko smo mi</span>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="assets/ja3.png" alt="stefan" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Stefan Cvetkovic</h3>
+                        <p class="w3-opacity">CEO & Founder</p>
+                        <p>Svestrani sam preduzetnik sa strascu za inovacije i tehnologiju. Moja vizija je stvoriti alate koji olaksavaju rad pravosudnim institucijama. Uvek sam posvecen unapredenju pravne efikasnosti i pruzanju podrske pravdi kroz moderna
+                            resenja.
+                            <br>
+                            <br>
+                        </p>
+                        <p><button class="w3-button w3-light-grey w3-block">Kontakt</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="assets/ogi3.jpg" alt="Ogi" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Ognjen Jovanovic</h3>
+                        <p class="w3-opacity">Art Director</p>
+                        <p>Kreativni direktor sa dubokim razumevanjem estetike i dizajna. Posedujem bogato iskustvo u kreiranju vizuelnih identiteta koji istovremeno inspirisu i informisu. Moja strast je pronalazak jedinstvenih i efektivnih resenja koja
+                            ostavljaju trajan utisak.
+                            <br>
+                            <br></p>
+                        <p><button class="w3-button w3-light-grey w3-block">Kontakt</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="assets/maki.jpg" alt="Maki" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Marko Komluski</h3>
+                        <p class="w3-opacity">Designer</p>
+                        <p>Sa istinskom posvecenoscu prema detaljima, Marko je kreator koji svojim dizajnom ozivljava svaku ideju. Njegov pristup kombinuje prakticnost i estetiku, donoseci svezinu i originalnost u svaku kreaciju. Marko s lakocom prepoznaje
+                            suptilne nijanse stila i trendova, pruzajuci autenticne i inovativne dizajnerske koncepte koji isticu svaki projekta.</p>
+                        <p><button class="w3-button w3-light-grey w3-block">Kontakt</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="w3-center w3-padding-64" id="contact">
+            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Kontaktirajte nas</span>
+        </div>
+
+        <form class="w3-container" action="/action_page.php" target="_blank">
+            <div class="w3-section">
+                <label>Ime</label>
+                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+            </div>
+            <div class="w3-section">
+                <label>E-mail</label>
+                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+            </div>
+            <div class="w3-section">
+                <label>Tema</label>
+                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+            </div>
+            <div class="w3-section">
+                <label>Poruka</label>
+                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
+            </div>
+            <button type="submit" class="w3-button w3-block w3-black">Posalji</button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+        <h4>Kontakt: 021/4562216</h4>
+        <h4>Adresa: Trg Dositeja Obradovica 3</h4>
+        <a href="/about" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Idi na vrh</a>
+        <div class="w3-xlarge w3-section">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <p>Powered by NS-TEAM,<br>Sva prava zadrzana</p>
+    </footer>
+
+
+
+
+</body>
+
+</html>

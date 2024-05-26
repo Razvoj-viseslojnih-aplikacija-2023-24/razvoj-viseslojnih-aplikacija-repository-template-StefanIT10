@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Predmet } from 'src/app/models/predmet';
@@ -13,7 +13,8 @@ import { UcesnikService } from 'src/app/services/ucesnik.service';
   templateUrl: './rociste-dijalog.component.html',
   styleUrls: ['./rociste-dijalog.component.css']
 })
-export class RocisteDijalogComponent implements OnInit{
+
+export class RocisteDijalogComponent{
   flag!:number;
   ucesnici!: Ucesnik[];
 

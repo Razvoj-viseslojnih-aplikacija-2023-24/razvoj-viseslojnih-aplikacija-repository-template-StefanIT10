@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -6,6 +6,8 @@ import { Predmet } from 'src/app/models/predmet';
 import { Sud } from 'src/app/models/sud';
 import { PredmetService } from 'src/app/services/predmet.service';
 import { PredmetDijalogComponent } from '../../dialogs/predmet-dijalog/predmet-dijalog.component';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-predmet',
@@ -18,6 +20,9 @@ export class PredmetComponent implements OnInit, OnDestroy {
   displayedColumns = ['id', 'brojPr', 'opis', 'datumPocetka', 'aktivan', 'sud', 'actions'];
   dataSource!:MatTableDataSource<Predmet>;
   subscription!:Subscription;
+
+  @ViewChild(MatSort, {static:false}) sort!:MatSort;
+  @ViewChild(MatPaginator, {static:false}) paginator!:MatPaginator;
 
   parentSelectedPredmet!:Predmet;
 
@@ -35,6 +40,8 @@ export class PredmetComponent implements OnInit, OnDestroy {
       (data) => {
         //console.log(data)
         this.dataSource = new MatTableDataSource(data);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }    
     ),
     (error:Error) => {
@@ -59,6 +66,13 @@ export class PredmetComponent implements OnInit, OnDestroy {
   public selectRow(row:Predmet){
     this.parentSelectedPredmet = row;
   }  
+
+  public applyFilter(filter:any){
+    filter = filter.target.value;
+    filter = filter.trim();
+    filter = filter.toLocaleLowerCase();
+    this.dataSource.filter = filter;
+  }
 
 }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -7,22 +7,26 @@ import { Rociste } from 'src/app/models/rociste';
 import { Ucesnik } from 'src/app/models/ucesnik';
 import { RocisteService } from 'src/app/services/rociste.service';
 import { RocisteDijalogComponent } from '../../dialogs/rociste-dijalog/rociste-dijalog.component';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-rociste',
   templateUrl: './rociste.component.html',
   styleUrls: ['./rociste.component.css']
 })
-export class RocisteComponent implements OnInit, OnDestroy, OnChanges{
+export class RocisteComponent implements OnChanges{
       
   displayedColumns = ['id', 'datumRocista', 'sudnica', 'ucesnik', 'actions'];
   dataSource!:MatTableDataSource<Rociste>;
   subscription!:Subscription;
 
+
   @Input()
   childSelectedPredmet!:Predmet;
 
   constructor(private service:RocisteService, public dialog:MatDialog){}
+  
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
   }
