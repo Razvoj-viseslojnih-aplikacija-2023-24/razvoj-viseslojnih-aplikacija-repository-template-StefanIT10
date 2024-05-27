@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -16,9 +16,9 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./rociste.component.css']
 })
 export class RocisteComponent implements OnChanges{
-      
+  
+  dataSource!:MatTableDataSource<Rociste>;    
   displayedColumns = ['id', 'datumRocista', 'sudnica', 'ucesnik', 'actions'];
-  dataSource!:MatTableDataSource<Rociste>;
   subscription!:Subscription;
 
 
@@ -27,14 +27,13 @@ export class RocisteComponent implements OnChanges{
 
   constructor(private service:RocisteService, public dialog:MatDialog){}
   
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe()
-  }
-
   ngOnChanges(changes: SimpleChanges): void {
     this.loadData();
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(): void {
     this.loadData();
@@ -42,7 +41,7 @@ export class RocisteComponent implements OnChanges{
 
   public loadData(){
     this.subscription = this.service.getRocisteByPredmet(this.childSelectedPredmet.id).subscribe(
-      (data) => {
+      data => {
         //console.log(data)
         this.dataSource = new MatTableDataSource(data);
       }    
@@ -54,13 +53,13 @@ export class RocisteComponent implements OnChanges{
     
   }
 
-  public openDialog(flag:number, id?:number, datumRocista?:Date, sudnica?:string, ucesnik?:Ucesnik){
+  public openDialog(flag:number, id?:number, datumRocista?:Date, sudnica?:string, ucesnik?:Ucesnik):void{
     const dialogRef = this.dialog.open(RocisteDijalogComponent, {data: {id, datumRocista, sudnica, ucesnik}});
     dialogRef.componentInstance.flag = flag
     dialogRef.afterClosed().subscribe(
-      (result) => {
+      result => {
         if(result == 1){
-          this.loadData()
+          this.loadData();
         }
       }
     )

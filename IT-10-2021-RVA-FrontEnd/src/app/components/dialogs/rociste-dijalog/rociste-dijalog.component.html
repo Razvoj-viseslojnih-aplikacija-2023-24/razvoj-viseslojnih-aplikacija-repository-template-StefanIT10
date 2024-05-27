@@ -5,20 +5,20 @@
 
     <form class="mat-dialog-content" #formControl="ngForm">
         <div class="form">
-            <mat-form-field>
+            <mat-form-field class="form-field">
                 <input matInput [matDatepicker]="datumRocista" placeholder="Datum rocista" name="Datum" [disabled]="flag==3" [(ngModel)]="data.datumRocista" required />
                 <mat-datepicker-toggle matSuffix [for]="datumRocista"></mat-datepicker-toggle>
                 <mat-datepicker #datumRocista></mat-datepicker>
             </mat-form-field>
         </div>
         <div class="form">
-            <mat-form-field>
+            <mat-form-field class="form-field">
                 <input matInput placeholder="Sudnica" name="sudnica" [disabled]="flag==3" [(ngModel)]="data.sudnica" required />
             </mat-form-field>
         </div>
 
         <div class="form">
-            <mat-select [compareWith]="compare" placeholder="Ucesnik" name="Ucesnik" [disabled]="flag==3" [(ngModel)]="data.ucesnik" required>
+            <mat-select [compareWith]="compare" class="form-field" placeholder="Ucesnik" name="Ucesnik" [disabled]="flag==3" [(ngModel)]="data.ucesnik" required>
                 <mat-option *ngFor="let ucesnik of ucesnici" [value]="ucesnik">
                     {{ucesnik.mbr}}
                 </mat-option>

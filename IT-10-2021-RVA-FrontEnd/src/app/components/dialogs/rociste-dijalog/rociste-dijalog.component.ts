@@ -24,7 +24,7 @@ export class RocisteDijalogComponent{
     public dialogRef: MatDialogRef<Rociste>,
     @Inject (MAT_DIALOG_DATA) public data:Rociste,
     public service: RocisteService,
-    public ucesnikService: UcesnikService,
+    public ucesnikService: UcesnikService
   ){}
 
 
@@ -37,7 +37,7 @@ export class RocisteDijalogComponent{
     
   }
 
-  public compare(a:Rociste, b:Rociste){
+  public compare(a:any, b:any){
     return a.id == b.id;
   }
   

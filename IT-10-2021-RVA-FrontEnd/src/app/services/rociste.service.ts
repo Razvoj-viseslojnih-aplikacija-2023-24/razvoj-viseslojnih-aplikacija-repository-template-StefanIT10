@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ROCISTE_BY_PREDMET_URL, ROCISTE_URL } from '../constants';
+import { ROCISTE_URL, ROCISTE_BY_PREDMET_URL } from '../constants';
 import { Rociste } from '../models/rociste';
 
 @Injectable({
