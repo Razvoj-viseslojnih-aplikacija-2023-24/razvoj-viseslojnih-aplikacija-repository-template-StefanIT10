@@ -63,6 +63,62 @@
                 blisku saradnju sa korisnicima, tim je osigurao da aplikacija ispunjava stvarne potrebe i olaksava svakodnevne zadatke u pravosudnim institucijama.</p>
         </div>
 
+        <!-- Video Section -->
+        <div class="w3-center w3-padding-64" id="videos">
+            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Video sadrzaj</span>
+        </div>
+
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col s4 w3-margin-bottom">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/H4x8UEKP3ls" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="w3-col s4 w3-margin-bottom">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/BadB1z-V_qU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="w3-col s4 w3-margin-bottom">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/IMxDeACOWCE" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="w3-center w3-padding-64" id="blog">
+            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Blog</span>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="assets/project.png" alt="Blog 1" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Novi Inovativni Projekat</h3>
+                        <p>Procitajte o nasem najnovijem projektu koji transformise nacin rada pravosudnih institucija...</p>
+                        <p><a href="/blog1" class="w3-button w3-black">Procitaj vise</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="assets/iv.jpg" alt="Blog 2" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Intervju sa CEO</h3>
+                        <p>U ovom intervjuu nas CEO govori o buducnosti tehnologije u pravosudnim institucijama...</p>
+                        <p><a href="/blog2" class="w3-button w3-black">Procitaj vise</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="assets/tech.jpeg" alt="Blog 3" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Tehnoloske Inovacije</h3>
+                        <p>Kako nove tehnologije mogu pomoci u unapredjenju pravosudnih sistema...</p>
+                        <p><a href="/blog3" class="w3-button w3-black">Procitaj vise</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Grid -->
         <div class="w3-row-padding" id="about">
             <div class="w3-center w3-padding-64">
@@ -113,6 +169,53 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Animirani brojac -->
+        <div class="w3-center w3-padding-64" id="stats">
+            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Nasi uspesi</span>
+        </div>
+
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-quarter">
+                <span class="w3-xxlarge w3-text-red">23+</span>
+                <br>Projekata
+            </div>
+            <div class="w3-quarter">
+                <span class="w3-xxlarge w3-text-red">98%</span>
+                <br>Zadovoljstvo
+            </div>
+            <div class="w3-quarter">
+                <span class="w3-xxlarge w3-text-red">150+</span>
+                <br>Klijenata
+            </div>
+            <div class="w3-quarter">
+                <span class="w3-xxlarge w3-text-red">5</span>
+                <br>Godina iskustva
+            </div>
+        </div>
+
+        <script>
+            function animateValue(id, start, end, duration) {
+                var range = end - start;
+                var current = start;
+                var increment = end > start ? 1 : -1;
+                var stepTime = Math.abs(Math.floor(duration / range));
+                var obj = document.getElementById(id);
+                var timer = setInterval(function() {
+                    current += increment;
+                    obj.innerHTML = current;
+                    if (current == end) {
+                        clearInterval(timer);
+                    }
+                }, stepTime);
+            }
+
+            animateValue("projects", 0, 23, 2000);
+            animateValue("satisfaction", 0, 98, 2000);
+            animateValue("clients", 0, 150, 2000);
+            animateValue("experience", 0, 5, 2000);
+        </script>
 
         <!-- Contact -->
         <div class="w3-center w3-padding-64" id="contact">

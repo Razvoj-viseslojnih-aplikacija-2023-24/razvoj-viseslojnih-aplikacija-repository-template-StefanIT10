@@ -1,5 +1,5 @@
 <div class="container">
-    <h3 mat-dialog-title *ngIf="flag == 1">Dodavanje predmeta</h3>
+    <h3 mat-dialog-title *ngIf="flag == 1">Dodavanje predmeta:</h3>
     <h3 mat-dialog-title *ngIf="flag == 2">Ažuriranje predmeta: {{data.id}}</h3>
     <h3 mat-dialog-title *ngIf="flag == 3">Brisanje predmeta: {{data.id}}</h3>
 
@@ -23,9 +23,9 @@
             </mat-form-field>
         </div>
         <div class="form">
-            <mat-form-field>
-                <input matInput placeholder="Aktivan" name="aktivan" [disabled]="flag==3" [(ngModel)]="data.aktivan" required />
-            </mat-form-field>
+            <mat-checkbox name="Aktivan" [disabled]="flag==3" [(ngModel)]="data.aktivan">
+                Aktivan
+            </mat-checkbox>
         </div>
         <div class="form">
             <mat-select [compareWith]="compare" placeholder="Sud" name="Sud" [disabled]="flag==3" [(ngModel)]="data.sud" required>

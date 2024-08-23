@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -21,6 +21,8 @@ export class RocisteComponent implements OnChanges{
   displayedColumns = ['id', 'datumRocista', 'sudnica', 'ucesnik', 'actions'];
   subscription!:Subscription;
 
+  @ViewChild(MatSort, {static:false}) sort!:MatSort;
+  @ViewChild(MatPaginator, {static:false}) paginator!:MatPaginator;
 
   @Input()
   childSelectedPredmet!:Predmet;
@@ -44,6 +46,8 @@ export class RocisteComponent implements OnChanges{
       data => {
         //console.log(data)
         this.dataSource = new MatTableDataSource(data);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }    
     ),
     (error:Error) => {
@@ -55,7 +59,8 @@ export class RocisteComponent implements OnChanges{
 
   public openDialog(flag:number, id?:number, datumRocista?:Date, sudnica?:string, ucesnik?:Ucesnik):void{
     const dialogRef = this.dialog.open(RocisteDijalogComponent, {data: {id, datumRocista, sudnica, ucesnik}});
-    dialogRef.componentInstance.flag = flag
+    dialogRef.componentInstance.flag = flag;
+    dialogRef.componentInstance.data.predmet = this.childSelectedPredmet;
     dialogRef.afterClosed().subscribe(
       result => {
         if(result == 1){
@@ -63,6 +68,13 @@ export class RocisteComponent implements OnChanges{
         }
       }
     )
+  }
+
+  public applyFilter(filter:any){
+    filter = filter.target.value;
+    filter = filter.trim();
+    filter = filter.toLocaleLowerCase();
+    this.dataSource.filter = filter;
   }
 
 }

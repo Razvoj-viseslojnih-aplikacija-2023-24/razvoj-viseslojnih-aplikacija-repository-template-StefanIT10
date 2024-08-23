@@ -11,7 +11,7 @@
     <mat-table matSort [dataSource]="dataSource" class="mat-cell">
         <!--ime-->
         <ng-container matColumnDef="ime">
-            <mat-header-cell *matHeaderCellDef>IME</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>IME</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.ime }}</mat-cell>
         </ng-container>
         <!--id-->
@@ -24,12 +24,14 @@
             <mat-header-cell mat-sort-header *matHeaderCellDef>PREZIME</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.prezime }}</mat-cell>
         </ng-container>
+        <!-- mbr -->
         <ng-container matColumnDef="mbr">
-            <mat-header-cell *matHeaderCellDef>MBR</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>MBR</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.mbr }}</mat-cell>
         </ng-container>
+        <!-- status -->
         <ng-container matColumnDef="status">
-            <mat-header-cell *matHeaderCellDef>STATUS</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>STATUS</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.status }}</mat-cell>
         </ng-container>
         <!-- Action Buttons -->

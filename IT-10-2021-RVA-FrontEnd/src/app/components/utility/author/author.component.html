@@ -60,92 +60,189 @@
             <h1><b>O autoru</b></h1>
         </div>
 
-        <!-- Grid -->
-        <div class="w3-row-padding" id="about">
-            <div class="w3-center w3-padding-64">
-                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Ko sam ja</span>
-            </div>
+        <!-- Slideshow -->
+        <div class="w3-container">
+            <div class="w3-display-container mySlides">
+                <img src="assets/ceo.jpg" style="width:100%">
+                <div class="w3-display-topleft w3-container w3-padding-32">
 
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4">
-                    <img src="assets/prednosti3.png" alt="Maki" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Prednosti</h3>
-                        <ul>
-                            <li>Strast i posvećenost: Poseduje strast i posvećenost za inovacijama i tehnologiji, što je ključno za uspeh u oblasti razvoja softverskih rešenja.</li>
-                            <li>Vizija: Ima jasnu viziju stvaranja alata koji olakšavaju rad pravosudnim institucijama, što ukazuje na duboko razumevanje industrije i potreba korisnika.</li>
-                            <li>Iskustvo: Sa preko deset godina iskustva u razvoju softverskih rešenja za pravosudne institucije, poseduje značajno praktično znanje i veštine potrebne za uspeh u ovom sektoru.</li>
-                            <li>Razumevanje korisnika: Razvija tehnologije koje su intuitivne i jednostavne za korišćenje, što je ključno za usvajanje i uspeh proizvoda na tržištu.</li>
-                        </ul>
-                    </div>
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img src="assets/pm.jpg" style="width:100%">
+                <div class="w3-display-middle w3-container w3-padding-32">
+
+                </div>
+            </div>
+            <div class="w3-display-container mySlides">
+                <img src="assets/tb.png" style="width:100%">
+                <div class="w3-display-topright w3-container w3-padding-32">
+
                 </div>
             </div>
 
 
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4">
-                    <img src="assets/ja3.png" alt="stefan" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Stefan Cvetkovic</h3>
-                        <p class="w3-opacity">CEO & Founder</p>
-                        <p>Svestrani sam preduzetnik sa strascu za inovacije i tehnologiju. Moja vizija je stvoriti alate koji olaksavaju rad pravosudnim institucijama. Uvek sam posvecen unapredenju pravne efikasnosti i pruzanju podrske pravdi kroz moderna
-                            resenja. Imam preko deset godina iskustva u razvoju softverskih resenja koja su transformisala nacin na koji pravosudne institucije funkcionisu. Moje obrazovanje i profesionalno iskustvo omogucili su mi da razumem kompleksne
-                            probleme sa kojima se suocavaju pravni profesionalci, i da razvijem tehnologije koje su intuitivne i jednostavne za koriscenje.
-                            <br>
-                            <br>
-                        </p>
-                        <p><button class="w3-button w3-light-grey w3-block">Kontakt</button></p>
-                    </div>
+            <!-- Slideshow next/previous buttons -->
+            <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+                <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+                <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+
+                <div class="w3-center">
+                    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
                 </div>
             </div>
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card-4">
-                    <img src="assets/mane2.png" alt="Maki" style="width:100%">
-                    <div class="w3-container">
-                        <h3>Mane</h3>
-                        <ul>
-                            <li>Moguće preterano fokusiranje na tehnologiju: Preterana fascinacija tehnologijom može dovesti do toga da zanemari stvarne potrebe korisnika ili da razvija rešenja koja su previše kompleksna ili neprilagođena stvarnim potrebama.</li>
-                            <li>Nedostatak timskog rada: Ukoliko je previše fokusiran na sopstvenu viziju, može propustiti dragocen feedback i ideje drugih članova tima ili korisnika, što može ograničiti inovativnost i uspeh proizvoda.</li>
-                            <li>Ograničenja u razumevanju pravnih sistema: Iako ima obrazovanje i iskustvo u tehnološkom sektoru, mogu postojati rupe u razumevanju pravnih sistema i procesa, što može uticati na efikasnost razvijenih rešenja ili njihovu primenu
-                                u realnim pravnim okruženjima.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-
         </div>
 
-        <!-- Contact -->
-        <div class="w3-center w3-padding-64" id="contact">
-            <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Kontaktirajte autora</span>
+
+        <!-- Content -->
+        <div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+
+            <!-- Grid -->
+            <div class="w3-row-padding" id="about">
+                <div class="w3-center w3-padding-64">
+                    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Ko sam ja</span>
+                </div>
+
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <img src="assets/prednosti3.png" alt="Maki" style="width:100%">
+                        <div class="w3-container">
+                            <h3>Prednosti</h3>
+                            <ul>
+                                <li>Strast i posvećenost: Poseduje strast i posvećenost za inovacijama i tehnologiji, što je ključno za uspeh u oblasti razvoja softverskih rešenja.</li>
+                                <li>Vizija: Ima jasnu viziju stvaranja alata koji olakšavaju rad pravosudnim institucijama, što ukazuje na duboko razumevanje industrije i potreba korisnika.</li>
+                                <li>Iskustvo: Sa preko deset godina iskustva u razvoju softverskih rešenja za pravosudne institucije, poseduje značajno praktično znanje i veštine potrebne za uspeh u ovom sektoru.</li>
+                                <li>Razumevanje korisnika: Razvija tehnologije koje su intuitivne i jednostavne za korišćenje, što je ključno za usvajanje i uspeh proizvoda na tržištu.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <img src="assets/ja3.png" alt="stefan" style="width:100%">
+                        <div class="w3-container">
+                            <h3>Stefan Cvetkovic</h3>
+                            <p class="w3-opacity">CEO & Founder</p>
+                            <p>Svestrani sam preduzetnik sa strascu za inovacije i tehnologiju. Moja vizija je stvoriti alate koji olaksavaju rad pravosudnim institucijama. Uvek sam posvecen unapredenju pravne efikasnosti i pruzanju podrske pravdi kroz moderna
+                                resenja. Imam preko deset godina iskustva u razvoju softverskih resenja koja su transformisala nacin na koji pravosudne institucije funkcionisu. Moje obrazovanje i profesionalno iskustvo omogucili su mi da razumem kompleksne
+                                probleme sa kojima se suocavaju pravni profesionalci, i da razvijem tehnologije koje su intuitivne i jednostavne za koriscenje.
+                                <br>
+                                <br>
+                            </p>
+                            <p><button class="w3-button w3-light-grey w3-block">Kontakt</button></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4">
+                        <img src="assets/mane2.png" alt="Maki" style="width:100%">
+                        <div class="w3-container">
+                            <h3>Mane</h3>
+                            <ul>
+                                <li>Moguće preterano fokusiranje na tehnologiju: Preterana fascinacija tehnologijom može dovesti do toga da zanemari stvarne potrebe korisnika ili da razvija rešenja koja su previše kompleksna ili neprilagođena stvarnim potrebama.</li>
+                                <li>Nedostatak timskog rada: Ukoliko je previše fokusiran na sopstvenu viziju, može propustiti dragocen feedback i ideje drugih članova tima ili korisnika, što može ograničiti inovativnost i uspeh proizvoda.</li>
+                                <li>Ograničenja u razumevanju pravnih sistema: Iako ima obrazovanje i iskustvo u tehnološkom sektoru, mogu postojati rupe u razumevanju pravnih sistema i procesa, što može uticati na efikasnost razvijenih rešenja ili njihovu
+                                    primenu u realnim pravnim okruženjima.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prikazivanje sertifikata ili nagrada -->
+            <div class="w3-center w3-padding-64" id="certificates">
+                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Nasi sertifikati i nagrade</span>
+            </div>
+
+            <div class="w3-row-padding w3-padding-16 w3-container">
+                <div class="w3-third w3-margin-bottom">
+                    <img src="assets/cert1.jpg" alt="Certificate 1" style="width:100%">
+                    <p class="w3-opacity">Sertifikat za inovacije u pravosudnom softveru</p>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="assets/cert2.jpg" alt="Certificate 2" style="width:100%">
+                    <p class="w3-opacity">Sertifikat za izuzetan doprinos tehnoloskom napretku</p>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <img src="assets/cert5.jpg" alt="Award 1" style="width:140%">
+                    <p class="w3-opacity">Nagrada za najbolje korisnicko iskustvo</p>
+                </div>
+            </div>
+
+
+            <!-- Testimonials -->
+            <div class="w3-center w3-padding-64" id="testimonials">
+                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Sta korisnici kazu</span>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4 w3-padding">
+                        <p>"Stefan je transformisao način na koji radimo. Njegova rešenja su intuitivna i efikasna!"</p>
+                        <p><b>- Pravni stručnjak</b></p>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4 w3-padding">
+                        <p>"Nikada nisam video tako posvećenog profesionalca. Preporučujem njegove usluge svima."</p>
+                        <p><b>- Zadovoljni korisnik</b></p>
+                    </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card-4 w3-padding">
+                        <p>"Njegove inovacije su nam omogućile da unapredimo naš rad. Veliko hvala!"</p>
+                        <p><b>- CEO pravne firme</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="w3-center w3-padding-64" id="contact">
+                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Kontaktirajte autora</span>
+            </div>
+
+            <form class="w3-container" action="/action_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>Ime</label>
+                    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>E-mail</label>
+                    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+                </div>
+                <div class="w3-section">
+                    <label>Tema</label>
+                    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+                </div>
+                <div class="w3-section">
+                    <label>Poruka</label>
+                    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
+                </div>
+                <button type="submit" class="w3-button w3-block w3-black">Posalji</button>
+            </form>
+
+
+            <!-- Subscription Form -->
+            <div class="w3-center w3-padding-64" id="subscribe">
+                <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Pretplatite se na nas bilten</span>
+            </div>
+
+            <form class="w3-container" action="/subscribe_page.php" target="_blank">
+                <div class="w3-section">
+                    <label>E-mail</label>
+                    <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+                </div>
+                <button type="submit" class="w3-button w3-block w3-black">Pretplati se</button>
+            </form>
+
         </div>
-
-        <form class="w3-container" action="/action_page.php" target="_blank">
-            <div class="w3-section">
-                <label>Ime</label>
-                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
-            </div>
-            <div class="w3-section">
-                <label>E-mail</label>
-                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
-            </div>
-            <div class="w3-section">
-                <label>Tema</label>
-                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
-            </div>
-            <div class="w3-section">
-                <label>Poruka</label>
-                <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required>
-            </div>
-            <button type="submit" class="w3-button w3-block w3-black">Posalji</button>
-        </form>
-
     </div>
 
     <!-- Footer -->
-
     <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
         <h4>Kontakt: 021/4562216</h4>
         <h4>Adresa: Trg Dositeja Obradovica 3</h4>
@@ -160,8 +257,6 @@
         </div>
         <p>Powered by NS-TEAM,<br>Sva prava zadrzana</p>
     </footer>
-
-
 
 </body>
 

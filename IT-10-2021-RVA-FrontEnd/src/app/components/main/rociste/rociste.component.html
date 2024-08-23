@@ -3,24 +3,30 @@
 </mat-toolbar>
 
 <div class="container mat-elavation-z8">
-    <mat-table [dataSource]="dataSource" class="mat-cell">
-        <!--ID-->
+    <div class="filter-field">
+        <mat-form-field subscriptSizing="dynamic">
+            <input matInput placeholder="Pretraga .. " name="Filter" (keyup)="applyFilter($event)" />
+        </mat-form-field>
+    </div>
+    <mat-table matSort [dataSource]="dataSource" class="mat-cell">
+        <!--Datum Rocista-->
         <ng-container matColumnDef="datumRocista">
-            <mat-header-cell *matHeaderCellDef>DATUM ROCISTA</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>DATUM ROCISTA</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.datumRocista | date:'dd.MM.yyyy.' }}</mat-cell>
         </ng-container>
-        <!--Naziv-->
+        <!--ID-->
         <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>ID</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
         </ng-container>
+        <!-- Sudnica -->
         <ng-container matColumnDef="sudnica">
-            <mat-header-cell *matHeaderCellDef>SUDNICA</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>SUDNICA</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.sudnica }}</mat-cell>
         </ng-container>
-        <!-- Adresa -->
+        <!-- Ucesnik -->
         <ng-container matColumnDef="ucesnik">
-            <mat-header-cell *matHeaderCellDef>UCESNIK</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>UCESNIK</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.ucesnik.mbr }}</mat-cell>
         </ng-container>
         <!-- Action Buttons -->
@@ -45,4 +51,7 @@
         <mat-row style="cursor: pointer;" *matRowDef="let row; columns: displayedColumns">
         </mat-row>
     </mat-table>
+    <mat-paginator [length]="20" [pageSize]="6" [pageSizeOptions]="[3,6,9,12]">
+
+    </mat-paginator>
 </div>

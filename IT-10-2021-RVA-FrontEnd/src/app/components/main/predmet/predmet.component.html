@@ -9,31 +9,34 @@
         </mat-form-field>
     </div>
     <mat-table matSort [dataSource]="dataSource" class="mat-cell">
-        <!--ID-->
+        <!--Broj Predmeta-->
         <ng-container matColumnDef="brojPr">
-            <mat-header-cell *matHeaderCellDef>BROJ_PR</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>BROJ_PR</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.brojPr }}</mat-cell>
         </ng-container>
-        <!--Naziv-->
+        <!--ID-->
         <ng-container matColumnDef="id">
             <mat-header-cell mat-sort-header *matHeaderCellDef>ID</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
         </ng-container>
-        <!-- Adresa -->
+        <!-- Opis -->
         <ng-container matColumnDef="opis">
-            <mat-header-cell *matHeaderCellDef>OPIS</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>OPIS</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.opis }}</mat-cell>
         </ng-container>
+        <!-- Datum Pocetka -->
         <ng-container matColumnDef="datumPocetka">
             <mat-header-cell mat-sort-header *matHeaderCellDef>DATUM POCETKA</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.datumPocetka | date:'dd.MM.yyyy.' }}</mat-cell>
         </ng-container>
+        <!-- Aktivan -->
         <ng-container matColumnDef="aktivan">
-            <mat-header-cell *matHeaderCellDef>AKTIVAN</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>AKTIVAN</mat-header-cell>
             <mat-cell [style.color]="row.aktivan ? 'green' : 'red' " *matCellDef="let row">{{ row.aktivan ? 'Da' : 'Ne' }}</mat-cell>
         </ng-container>
+        <!-- Sud -->
         <ng-container matColumnDef="sud">
-            <mat-header-cell *matHeaderCellDef>SUD</mat-header-cell>
+            <mat-header-cell mat-sort-header *matHeaderCellDef>SUD</mat-header-cell>
             <mat-cell *matCellDef="let row">{{ row.sud.naziv }}</mat-cell>
         </ng-container>
         <!-- Action Buttons -->

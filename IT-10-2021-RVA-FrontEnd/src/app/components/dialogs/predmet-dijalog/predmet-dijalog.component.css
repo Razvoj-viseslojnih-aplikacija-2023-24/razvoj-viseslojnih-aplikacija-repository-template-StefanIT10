@@ -1,47 +1,46 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     max-width: 350px;
     margin: 0 auto;
     align-items: center;
-    padding: 32px 0 32px 0;
-    gap: 16px;
-  }
-  
-  form{
+    padding: 32px;
+    gap: 30px;
+}
+
+form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
-  
-  h3{
+}
+
+h3 {
     text-align: center;
-  }
-  
-  .mat-form-field{
+}
+
+.mat-form-field {
     font-size: 16px;
     flex-grow: 1;
-  }
-  
-  .mat-dialog-actions{
+}
+
+.mat-dialog-actions {
     display: flex;
-    width: 60%;
+    width: 80%;
     justify-content: space-evenly;
-  }
-  
-  .mat-dialog-actions button{
+}
+
+.mat-dialog-actions button {
     padding: 12px;
     font-size: 16px;
     color: #fff;
     border: none;
     border-radius: 6px;
-  }
-  
-  .mat-dialog-actions button:first-child{
+}
+
+.mat-dialog-actions button:first-child {
     background-color: rgb(72, 235, 72);
-  }
-  
-  .mat-dialog-actions button:last-child{
+}
+
+.mat-dialog-actions button:last-child {
     background-color: rgb(217, 87, 87);
-  }
-  
+}
